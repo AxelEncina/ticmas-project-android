@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
     //private lateinit var viewModel: MainViewModel
     private lateinit var binding:ActivityMainBinding
 
-    val rtaViewModel : RtaViewModel by viewModels()
+    private val rtaViewModel : RtaViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
