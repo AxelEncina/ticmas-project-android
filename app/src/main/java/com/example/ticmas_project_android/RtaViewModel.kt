@@ -11,4 +11,8 @@ class RtaViewModel : ViewModel() {
         val current = DataProvider.random()
         modelData.postValue(current)
     }
+
+    fun areStringsEqual(text1: String, text2: String): Boolean {
+        return text1 == text2
+    }
 }

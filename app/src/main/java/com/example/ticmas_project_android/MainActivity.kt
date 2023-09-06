@@ -16,15 +16,17 @@ class MainActivity : AppCompatActivity() {
     //private lateinit var viewModel: MainViewModel
     private lateinit var binding:ActivityMainBinding
 
-    private val rtaViewModel : RtaViewModel by viewModels()
+    val rtaViewModel : RtaViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        //viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
-        val compareButton = findViewById<Button>(R.id.botonComparar)
-        compareButton.setOnClickListener {
+        binding.botonComparar.setOnClickListener {rtaViewModel.randomGen()
+            rtaViewModel.modelData.observe(this, Observer {
+                binding.textResult3.text = it.cadena
+            })
+
             Log.d("tag" ,"Hiciste click al boton" )
             val editText1 = findViewById<EditText>(R.id.textCard1)
             val editText2 = findViewById<EditText>(R.id.textCard2)
@@ -33,16 +35,10 @@ class MainActivity : AppCompatActivity() {
             val text2 = editText2.text.toString()
 
             if (text1 == text2) {
-                resultTextView.text = "Los textos SON IGUALES"
-
+                resultTextView.text = "Los Textos SON IGUALES"
             } else {
-                resultTextView.text = "Los textos NO SON IGUALES"
+                resultTextView.text = "Los Textos NO SON IGUALES"
             }
-
-            rtaViewModel.modelData.observe(this, Observer {
-                binding.textResult3.text = it.cadena
-            })
-            binding.botonComparar.setOnClickListener {rtaViewModel.randomGen()}
         }
     }
 }
