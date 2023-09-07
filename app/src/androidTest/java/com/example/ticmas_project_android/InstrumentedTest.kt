@@ -13,20 +13,15 @@ class MainActivityInstrumentedTest {
 
     @Test
     fun testCompareButtonClicked() {
-        // Inicia la actividad utilizando ActivityScenario
         val scenario = ActivityScenario.launch(MainActivity::class.java)
 
-        // Simula la entrada de texto en los EditText
         onView(withId(R.id.textCard1)).perform(typeText("Texto1"))
         onView(withId(R.id.textCard2)).perform(typeText("Texto1"))
 
-        // Haz clic en el botón "Comparar"
         onView(withId(R.id.botonComparar)).perform(click())
 
-        // Verifica el resultado en el TextView
         onView(withId(R.id.textResult2)).check(matches(withText("Los Textos SON IGUALES")))
 
-        // Cierra la actividad al finalizar
         scenario.close()
     }
 }

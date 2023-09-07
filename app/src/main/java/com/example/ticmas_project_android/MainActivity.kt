@@ -3,17 +3,16 @@ package com.example.ticmas_project_android
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.Button
 import android.widget.TextView
 import android.widget.EditText
 import androidx.activity.viewModels
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.ticmas_project_android.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
-    //private lateinit var viewModel: MainViewModel
     private lateinit var binding:ActivityMainBinding
 
     private val rtaViewModel : RtaViewModel by viewModels()
@@ -36,8 +35,10 @@ class MainActivity : AppCompatActivity() {
 
             if (text1 == text2) {
                 resultTextView.text = "Los Textos SON IGUALES"
+                resultTextView.setTextColor(ContextCompat.getColor(this, R.color.colorVerde))
             } else {
                 resultTextView.text = "Los Textos NO SON IGUALES"
+                resultTextView.setTextColor(ContextCompat.getColor(this, R.color.colorRojo))
             }
         }
     }

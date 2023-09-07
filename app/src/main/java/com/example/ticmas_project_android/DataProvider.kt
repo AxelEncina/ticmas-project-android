@@ -1,5 +1,9 @@
 package com.example.ticmas_project_android
 
+/*
+Clase que provee las distintas respuestas en este caso agradeciendo en diferentes idiomas
+
+ */
 class DataProvider {
     //clase estática
     companion object {

@@ -12,6 +12,7 @@ class RtaViewModel : ViewModel() {
         modelData.postValue(current)
     }
 
+    //para la prueba unitaria
     fun areStringsEqual(text1: String, text2: String): Boolean {
         return text1 == text2
     }

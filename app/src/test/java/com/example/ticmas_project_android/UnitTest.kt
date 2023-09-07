@@ -38,7 +38,7 @@ class RtaViewModelTest {
     @Test
     fun `test areStringsEqual`() {
         val result = viewModel.areStringsEqual("Hola Mundo!", "Hola Mundo!")
-        assert(result) // Debe ser verdadero porque las cadenas son iguales
+        assert(result) // Debe ser verdadero porque las cadenas de prueba son iguales
     }
 }
 
